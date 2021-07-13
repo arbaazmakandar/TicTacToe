@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"  initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TIc Tac Toe</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet"> 
+  
+
+  
+  </head>
+  <body>
+      <div class="centered">
+          <span class="cyberspace" data-text="TIC">TIC</span>
+          <span class="cyberspace" data-text="TAC">TAC</span>
+          <span class="cyberspace" data-text="TOE">TOE</span>
+        </div>
+        >
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <defs>
+            <filter id="extrude">
+              
+              <feMorphology operator="erode" radius="0" in="SourceGraphic" result="erode" />
+              <feMorphology operator="erode" radius="2" in="SourceGraphic" result="erode1" />
+              <feMorphology operator="erode" radius="3" in="SourceGraphic" result="erode2" />
+              <feMorphology operator="erode" radius="4" in="SourceGraphic" result="erode3" />
+              <feMorphology operator="erode" radius="6" in="SourceGraphic" result="erode4" />
+               <feComposite in="erode" in2="erode1" operator="out" result="main"/> 
+              <feComposite in="erode1" in2="erode2" operator="out" result="stroke1"/>
+              <feComposite in="erode2" in2="erode3" operator="out" result="stroke2"/>
+              <feComposite in="erode3" in2="erode4" operator="out" result="stroke3"/>
+              <feGaussianBlur in="stroke1" stdDeviation="0 10" result="stroke1-blur" />
+              <feBlend in="stroke1-blur" mode="screen" result="stroke1-blur-blend"></feBlend>
+              <feGaussianBlur in="stroke2" stdDeviation="0 10"  />
+              <feOffset dx="0" dy="10" result="stroke2-blur"/>
+              <feBlend in="stroke2-blur" mode="screen" result="stroke2-blur-blend"></feBlend>
+              <feGaussianBlur in="stroke3" stdDeviation="0 25"  />
+              <feOffset dx="0" dy="20" result="stroke3-blur"/>
+              <feBlend in="stroke3-blur" mode="screen" result="stroke3-blur-blend"></feBlend>
+              
+              <feFlood result="floodFill" flood-color="rgba(0,0,0,0.7)" flood-opacity="1"/>
+              <feComposite in="floodFill" in2="erode2" operator="in" result="black"/> 
+              <feBlend in="black" mode="screen" result="letterInside"></feBlend>
+              <feMerge>
+                <feMergeNode in="stroke1-blur-blend"></feMergeNode>
+                <feMergeNode in="stroke2-blur-blend"></feMergeNode>
+              <feMergeNode in="stroke3-blur-blend"></feMergeNode>
+                <feMergeNode in="main"></feMergeNode>
+                <feMergeNode in="letterInside"></feMergeNode>
+              </feMerge>
+              
+            </filter>
+           
+          </defs>
+        </svg>
+        
+        <div class="input-group col-sm-10" >
+        <span class="input-group-addon playernames"> <strong>Player 1 name: </strong></span>
+      
+        <input  id="p1" name="p1" type="text" class="form-control" >
+        <span class="input-group-addon"> <strong>Player 2 name: </strong></span>
+        <input  id="p2" name="p2" type="text" class="form-control" >
+
+  
+    </div>
+    <div class="dim">
+      <label for="dimension" class="form-select bolder ">Choose a dimension:   </label>
+   
+      <select name= "dimensions" id="dimensions" width=50%>
+          <option value="3">Three</option>
+          <option value="4">Four</option>
+          <option value="5">Five</option>
+          <option value="6">Six</option>
+          <option value="7">Seven</option>
+          <option value="8">Eight</option>
+          <option value="9">Nine</option>
+          <option value="10">Ten</option>
+        </select>
+      </div>
+      
+    <div class="button-class ">
+      <button type="button" id="game-start" class="btn btn-primary" style="border: 1px solid black;" onclick="StartGame()">Start Game</button>
+    </div>
+
+
+    <div class="gridbox" >
+
+      <div id="game-container" class="hide center">
+        <div id="turn"></div>
+      </div>
+
+    </div>
+
+
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </body>
+</html>

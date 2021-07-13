@@ -1,0 +1,117 @@
+*{
+  font-family: 'Roboto Mono', monospace;
+}
+
+.cyberspace{
+  font-family:'Cyberspace-Raceway-Back',sans-serif;
+  font-size:8rem;
+  color:black;
+ 
+  /* -webkit-background-clip:text; */
+  -webkit-text-fill-color:rgba(135,209,228,1);
+  -webkit-text-stroke-width: 0.1rem;
+   -webkit-text-stroke-color: rgba(135,209,228,1); 
+  filter:url(#extrude);
+  
+}
+
+.centered{
+  margin: 3%;
+  text-align:center;
+  
+}
+#game-container{
+  margin: 7% 10%;
+  align-content: center;
+  justify-content: center;
+  min-height: 80%;
+  border: 1px solid black;
+  flex-wrap: nowrap;
+  padding: 2%;
+  background-image: radial-gradient( circle 966px at 6.9% 10.8%,  rgba(92,123,237,1) 0%, rgba(147,186,252,1) 90% ); ;
+}
+
+body{
+
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-size: cover;  
+  background:radial-gradient(#050526 0%,black 90%) ;
+}
+
+
+.cell{
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  font-weight: bold; 
+  min-height: 60px;
+  min-width: 60px;
+  border: 1px solid navy ;
+  border-radius: 5px; 
+  background-color: #4dff88;
+}
+
+.hide{
+  display: none;
+}
+
+.row{
+  flex-direction: row; 
+  align-items: center;
+  justify-content: center;
+}
+
+.col-sm-10{
+  margin: 0% 7% 1.8% 7%;
+}
+
+.dim{
+  margin: 3% 1% 0% 7%;
+  border: 1px solid black;
+  padding: 0.6%;
+  width: 28%;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  background-color: #00cccc;
+  color:   #000080;
+  font-weight: 1500;
+}
+
+
+.bolder{
+font-weight: 500;
+font-size: 20px;
+}
+
+.button-class{
+  margin: 3% 44% 2% 44%;
+
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  width: 8%;
+  border-radius: 5px;
+
+
+}
+
+#turn{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 10%;
+  min-width: 60%;
+  background-color: #d633ff;
+  color: 	  #000066;
+  font-size: 28px;
+  margin: 1%;
+
+border: 1px solid pink;
+}
+

@@ -19,7 +19,11 @@ document.getElementById('dimensions').addEventListener('change', changeDimension
 
 //Scroll to game
 const scrollWin = () => {
-  console.log("Hello");
+  window.scrollTo({
+    top: 650,
+    left: 0,
+    behavior: 'smooth'
+  });
 }
 
 
@@ -110,6 +114,7 @@ const initGame = () => {
         }
       gameContainer.appendChild(row);
       }
+      scrollWin();
   };
 
 const calculateWinner = () => {

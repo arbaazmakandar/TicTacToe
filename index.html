@@ -22,6 +22,7 @@
           <span class="cyberspace" data-text="TIC">TIC</span>
           <span class="cyberspace" data-text="TAC">TAC</span>
           <span class="cyberspace" data-text="TOE">TOE</span>
+    
         </div>
         >
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -42,7 +43,7 @@
               <feGaussianBlur in="stroke2" stdDeviation="0 10"  />
               <feOffset dx="0" dy="10" result="stroke2-blur"/>
               <feBlend in="stroke2-blur" mode="screen" result="stroke2-blur-blend"></feBlend>
-              <feGaussianBlur in="stroke3" stdDeviation="0 25"  />
+              <feGaussianBlur in="stroke3" stdDeviation="0 20"  />
               <feOffset dx="0" dy="20" result="stroke3-blur"/>
               <feBlend in="stroke3-blur" mode="screen" result="stroke3-blur-blend"></feBlend>
               
@@ -61,16 +62,18 @@
            
           </defs>
         </svg>
+        <div class="input-group col-sm-10" >
+              
+          <span class="input-group-addon playernames"> <strong>Player 1 name: </strong></span>
+        
+          <input  id="p1" name="p1" type="text" class="form-control" >
+        </div>
         
         <div class="input-group col-sm-10" >
-        <span class="input-group-addon playernames"> <strong>Player 1 name: </strong></span>
-      
-        <input  id="p1" name="p1" type="text" class="form-control" >
-        <span class="input-group-addon"> <strong>Player 2 name: </strong></span>
-        <input  id="p2" name="p2" type="text" class="form-control" >
-
+          <span class="input-group-addon"> <strong>Player 2 name: </strong></span>
+          <input  id="p2" name="p2" type="text" class="form-control" >
   
-    </div>
+        </div>
     <div class="dim">
       <label for="dimension" class="form-select bolder ">Choose a dimension:   </label>
    
